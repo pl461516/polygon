@@ -1,5 +1,8 @@
 import sys
 
+import math
+
+
 def get_area(vertices):
     area = 0.0
     for i in range(len(vertices)):
@@ -13,12 +16,25 @@ def get_list_of_points(coordinates):
         vertices.append((coordinates[i], coordinates[i + 1]))
     return vertices
 
+def sort_vertices(vertices):
+        n = len(vertices)
+        center_x = float(sum(x for x, y in vertices)) / n
+        center_y = float(sum(y for x, y in vertices)) / n
+        corners_with_angles = []
+        for x, y in vertices:
+            angle = (math.atan2(y - center_y, x - center_x) + 2.0 * math.pi) % (2.0 * math.pi)
+            corners_with_angles.append((x, y, angle))
+        corners_with_angles.sort(key=lambda tup: tup[2])
+        return corners_with_angles
+
 if __name__ == "__main__":
     if len(sys.argv[1:]) % 2 == 1:
         print("Parameters number error!")
+    elif len(sys.argv[1:]) == 0:
+        print("No parameters!")
     else:
         # coordinates = [2, 4, 3, 7, 6, 10, 7, 15, 132, 34]
         float_coordinates = [float(n) for n in sys.argv[1:]]
-        vertices = get_list_of_points(float_coordinates)
+        vertices = sort_vertices(get_list_of_points(float_coordinates))
         print(get_area(vertices))
         # print(get_area(sys.argv[1:]))
