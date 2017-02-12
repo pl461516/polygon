@@ -37,7 +37,7 @@ $ python polygon.py -2 14 -3.4 7.1 6.0 -10
 
 ###Dodatkowe informacje:
  - Algorytm nie działa w przypadku, gdy jeden z punktów jest mocno oddalony od reszty.
- - Nie wymagane jest podawanie punktów w określonym porządku, ponieważ program
+ - Nie jest wymagane podawanie punktów w określonym porządku, ponieważ program
    potrafi samodzielnie je posortować.
 
 
