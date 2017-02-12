@@ -4,8 +4,8 @@ def get_area(vertices):
     area = 0.0
     for i in range(len(vertices)):
         j = (i + 1) % len(vertices)
-        area += abs(vertices[i][0] * vertices[j][1] - vertices[j][0] * vertices[i][1])
-    return area / 2.0
+        area += vertices[i][0] * vertices[j][1] - vertices[j][0] * vertices[i][1]
+    return abs(area) / 2.0
 
 def get_list_of_points(coordinates):
     vertices = []
