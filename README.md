@@ -1,4 +1,5 @@
 # polygon
+[![Build Status](https://travis-ci.org/pl461516/polygon.svg?branch=master)](https://travis-ci.org/pl461516/polygon)
 
 ##Projekt na zaliczenie modułu "Środowiska i narzędzia wytwarzania oprogramowania"
 Autor: Patryk Ligenza, gr 1
